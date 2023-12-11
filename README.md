@@ -46,15 +46,15 @@ Update the variables with your configuration details.
 
 # API Endpoints
 ## Courses
-- **GET /api/courses: Retrieve paginated list of courses.
-- **GET/api/courses/:id: Retrieve a specific course.
-- **POST /courses: Create a new course (Admin only).
-- **PATCH /api/courses/:id: Update a course (Admin only).
-- **DELETE /courses/:id: Delete a course (Admin only).
+- GET /api/courses: Retrieve paginated list of courses.
+- GET/api/courses/:id: Retrieve a specific course.
+- POST /courses: Create a new course (Admin only).
+- PATCH /api/courses/:id: Update a course (Admin only).
+- DELETE /courses/:id: Delete a course (Admin only).
 ## Authentication
-- **POST /api/users/register: Register a new user.
-- **POST /api/users/login: Login and receive an authentication token.
-- **GET /api/users?limit=10&page=1: Retrieve paginated list of registered users (Admin only).
+- POST /api/users/register: Register a new user.
+- POST /api/users/login: Login and receive an authentication token.
+- GET /api/users?limit=10&page=1: Retrieve paginated list of registered users (Admin only).
 
 
 

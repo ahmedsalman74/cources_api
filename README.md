@@ -40,14 +40,18 @@ Update the variables with your configuration details.
      ```bash
     node index.js
 
-#API Endpoints
-##Courses
+
+
+
+
+# API Endpoints
+## Courses
 GET /api/courses: Retrieve paginated list of courses.
 GET/api/courses/:id: Retrieve a specific course.
 POST /courses: Create a new course (Admin only).
 PUT /api/courses/:id: Update a course (Admin only).
 DELETE /courses/:id: Delete a course (Admin only).
-##Authentication
+## Authentication
 POST /api/users/register: Register a new user.
 POST /api/users/login: Login and receive an authentication token.
 GET /api/users?limit=10&page=1: Retrieve paginated list of registered users (Admin only).

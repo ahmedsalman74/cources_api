@@ -33,7 +33,8 @@ const register = ascyncWatpper(
             lastName,
             email,
             role,
-            password: hashedPassword
+            password: hashedPassword,
+            avatar: req.file.filename
         })
        
 

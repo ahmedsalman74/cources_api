@@ -22,7 +22,7 @@ This Node.js Express API provides CRUD operations for managing courses, user aut
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/yourusername/node-express-courses-api.git](https://github.com/ahmedsalman74/cources_api.git)https://github.com/ahmedsalman74/cources_api.git
+   git clone (https://github.com/ahmedsalman74/cources_api.git)https://github.com/ahmedsalman74/cources_api.git
    cd node-express-courses-api
 
 

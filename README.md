@@ -58,3 +58,17 @@ Update the variables with your configuration details.
 
 
 
+# User Roles
+- Admin: Can perform all CRUD operations on courses and retrieve the list of registered users.
+- User: Can read courses and retrieve a specific course.
+- Route Protection
+- Certain routes are protected based on user roles. Users must include a valid authentication token in the request headers to access protected routes.
+
+## Error Handling
+- The API provides detailed error messages to assist developers in identifying and resolving issues. Error responses include status codes, messages, and, when applicable, additional information to guide troubleshooting.
+
+## Contributing
+- Contributions are welcome! Feel free to open issues, submit pull requests, or provide feedback.
+
+## License
+- This project is licensed under the MIT License - see the LICENSE file for details.

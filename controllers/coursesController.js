@@ -2,7 +2,8 @@ let Course = require('../models/course.model');
 const ascyncWatpper = require('../middlewares/ascyncWarpper');
 const { validationResult } = require('express-validator')
 const AppError = require('../utilites/appErrors')
-
+const Logger = require('../services/logger.service');
+const logger = new Logger('coursesController');
 
 const getAllCourses = async (req, res) => {
     const query = req.query;
@@ -10,8 +11,9 @@ const getAllCourses = async (req, res) => {
     const page = query.page || 1;
     const skip = (page - 1) * limit;
     const courses = await Course.find({}, { "__v": false }).limit(limit).skip(skip);
+    const coursesString = courses.map(course => JSON.stringify(course)).join(', ');
 
-
+    logger.info("return courses List" , courses);
     res.json({ status: "success", data: { courses: courses } })
 
 }
@@ -24,6 +26,7 @@ const getCourse = ascyncWatpper(
             return next(error)
 
         }
+        logger.info("return course details" , course);
         return res.json({ status: "success", data: { course: course } })
 
 
@@ -35,7 +38,9 @@ const AddCourse = ascyncWatpper(
 
         if (!errors.isEmpty()) {
             const error = AppError.create(errors.array(), 400, "Error")
+            
             return next(error)
+            
             // return res.status(400).json({status : "Error", data: {errors:errors.array()}});
         }
         const newCourse = new Course(req.body);

@@ -1,0 +1,1 @@
+GET localhost:5000/api/courses?limit=5&page=1

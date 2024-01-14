@@ -6,6 +6,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const coursesRouter = require('./routs/courses.rout');
 const usersRouter = require('./routs/users.rout');
+const {registerRateLimiter,loginRateLimiter}=require('./middlewares/rateLimiter')
 const uri=process.env.MONGO_URL;
 mongoose.connect(uri).then(()=>{
 console.log("DB connection established")
@@ -14,11 +15,15 @@ console.log("DB connection established")
 
 app.use(express.json());
 app.use(cors())
+
+
 // Serve static files from the "uploads" directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+
 app.use('/api/courses',coursesRouter);
-app.use('/api/users',usersRouter);
+app.use('/api/users',usersRouter,loginRateLimiter);
+
 
 
 // glopal middleware for routs error 
